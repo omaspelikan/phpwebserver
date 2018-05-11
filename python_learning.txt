@@ -1,0 +1,40 @@
+# Python Note
+### Dictionary definition
+    以 { } 符號代表，{ }內可以置入成對的一組key跟value , { key:value, key:value…}，key 跟 value _可以是任何變數或字串或數字_ (目前測試結果)
+存取value的方式為 dict [ key] 
+```
+dict = { ‘first’ : 1,  ‘second’ : ‘2’ }
+print(dict['first'])
+>> 1
+```
+Method 
+	dict.keys() return key  in dictionary
+	dict.values() return value in dictionary
+	dict.items() return key , value
+	set( list or dict or tuple ) return unique element not replicate.
+
+
+*Input*
+	input() , 要求輸入字串，（）內容會顯示在輸入符號前。
+	print(input(‘How are you’)） 會先顯示How are you? 在提示符號前
+
+*While*
+	using while to loop the codes until it’s conditional test is False.
+*docstring*
+	“””     “””  any content between two “”” ,is comment which can be generated to document by python.
+
+*Function*
+      def fun(parameter)
+		parameter 可以使用不固定數量的方式，前面加上*，此參數定義為tuple type，若前面加上 * * ，參數定義為dictionary，由一對key/value作為匯入內容。
+
+*Class*
+       By convention Class name is capital.
+	class Class_name():
+	self parameter refer itself and self.variable can be access to another method in the class
+
+Inheritance
+	Class have a child class to create a similar new class type, child class inherence attribute of parent class.
+	definition  ->  class Child(Parent):
+				def __init__(self):
+					super().__init__()
+	

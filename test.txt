@@ -1,0 +1,16 @@
+Hello this is a new file.
+and it will show how to write to file.
+This is a continuted line to the original content.
+and it will show how to append to file.
+This is a continuted line to the original content.
+and it will show how to append to file.
+This is a continuted line to the original content.
+and it will show how to append to file.
+This is a continuted line to the original content.
+and it will show how to append to file.
+This is a continuted line to the original content.
+and it will show how to append to file.
+This is a continuted line to the original content.
+and it will show how to append to file.
+This is a continuted line to the original content.
+and it will show how to append to file.
