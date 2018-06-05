@@ -1,5 +1,6 @@
 # pygame.py
 # pylint: disable=E1101
+# git control
 """ test pygame module """
 import sys
 import pygame
