@@ -3,6 +3,8 @@
 
 <?php
 
-echo "Hello World!";
+echo "Hello World!\n";
+$job = 6 *5;
+echo "good job $job";
 ?>
 </html>
