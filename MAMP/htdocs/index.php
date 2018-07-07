@@ -1,5 +1,11 @@
+<html>
+    <title> read hello</title>
+    <body>
+        <h1>Hello World</h1>
 <?php
-echo "Hello World! \n";
+$name = $_GET['name'];
+echo "Hello World! $name";
+echo '<br />';
 $job = 6 *5;
 echo 'test';
 echo '<br />';
@@ -9,4 +15,9 @@ $x = "abc";
 $y = "def";
 $z = $x.$y;
 echo "$z\n";
+echo "<pre>\n";
+echo "</pre>";
+print hash('sha256', 'Omas Pelikan');
 ?>
+    </body>
+</html>
