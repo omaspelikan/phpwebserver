@@ -18,6 +18,7 @@ echo "$z\n";
 echo "<pre>\n";
 echo "</pre>";
 print hash('sha256', 'Omas Pelikan');
+require "fail.php"
 ?>
     </body>
 </html>
