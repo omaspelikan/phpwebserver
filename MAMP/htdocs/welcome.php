@@ -1,8 +1,8 @@
 <html>
     <body>
 <?php
-echo $_POST["firstname"];
-echo $_POST["lastname"];
+echo "your first name :".$_POST["firstname"]."<br>";
+echo "your last name :".$_POST["lastname"]."<br>";
 ?>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <title>Omas Pelikan PHP</title>
 <body>
-<form action="welcome.php" method="post" target="_self">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     First name:<br/>
     <input type="text" name="firstname"><br>
     Last Name:<br/>
@@ -10,7 +10,12 @@
     <input type="submit" value="submit">
 </form>
 <?php
-    echo "HI php!";
+    if ($_POST["firstname"] != '') {
+        echo $_POST["firstname"]."<br>";
+    }
+    if ($_POST["lastname"] != '') {
+        echo $_POST["lastname"]."<br>";
+    }    
 ?>        
 </body>
 </html>
