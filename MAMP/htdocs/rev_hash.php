@@ -8,6 +8,7 @@
                 <input type="submit" name="Submit">
             </form>
             <?php
+                show_hash(15);
                if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     $pin = bf_hash($_GET["md5"]);
                     if ($pin === FALSE) {
@@ -27,6 +28,12 @@
                     }                    
                     return $found;                   
                }
+               function show_hash($number) {
+                    echo "Debug Output"."<br>";
+                        for($i="0";$i<="15";$i++) {
+                            echo hash('md5', str_pad($i,4,"0",STR_PAD_LEFT))." ".str_pad($i,4,"0",STR_PAD_LEFT)."<br>";
+                        }
+                } 
             ?>     
     </body>
 </html>
