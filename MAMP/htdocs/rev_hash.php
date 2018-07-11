@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
     <title>Reverse Hash to Pin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
     <body>
         
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
@@ -8,7 +11,8 @@
                 <input type="submit" name="Submit">
             </form>
             <?php
-                show_hash(15);
+                show_hash(20);
+                echo "<br>";
                 $time_start = microtime(True);
                if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     $pin = bf_hash($_GET["md5"]);
@@ -24,6 +28,7 @@
                         
                } 
                function bf_hash($hashv) {
+                   // compare hash value with 4 digit number from 0000 to 9999.
                    $found = FALSE;
                    $count = 1;
                     for($i="0";$i<="9999";$i++){
@@ -38,8 +43,9 @@
                     return $found;                   
                }
                function show_hash($number) {
+                   // print 4 digit number PIN value from 0 to $number and padding 0 to become 4 digit.
                     echo "Debug Output"."<br>";
-                        for($i="0";$i<="15";$i++) {
+                        for($i="0";$i<=$number;$i++) {
                             echo hash('md5', str_pad($i,4,"0",STR_PAD_LEFT))." ".str_pad($i,4,"0",STR_PAD_LEFT)."<br>";
                         }
                 } 
