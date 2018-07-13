@@ -1,24 +1,14 @@
+<!DOCTYPE html>
 <html>
-    <title> read hello</title>
-    <body>
-        <h1>Hello World</h1>
-<?php
-$name = $_GET['name'];
-echo "Hello World! $name";
-echo '<br />';
-$job = 6 *5;
-echo 'test';
-echo '<br />';
-echo "good job $job\n";
-echo "abc" . "cdd";
-$x = "abc";
-$y = "def";
-$z = $x.$y;
-echo "$z\n";
-echo "<pre>\n";
-echo "</pre>";
-print hash('sha256', 'Omas Pelikan');
-require "fail.php"
-?>
-    </body>
-</html>
+<head>
+<title>Login Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Welcome to Rock Paper Scissors</h1>
+<p id="warning">
+<a href="login.php">Please Login in</a>
+</p>
+<p>Attemp to go to <a href="game.php">game.php</a> without logging in - it should fail with an error message.</p>
+</body>
+<html>
