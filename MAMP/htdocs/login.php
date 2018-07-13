@@ -1,6 +1,9 @@
 <?php
     $oldname = isset($_POST["name"]) ? $_POST["name"] : '';
     $oldpass = isset($_POST["pass"]) ? $_POST["pass"] : '';
+    $salt = 'XyZzy12*_';
+    $stored_hash = hash('md5', $salt.'php123');
+    $md5 = hash('md5', $_POST["pass"]);
 ?>
 
 
@@ -18,6 +21,8 @@
 <?php
     if ($_POST["name"] == '' or ($_POST["pass"] == '')) {
         echo "User name and password are required";
+    } elseif ($_POST["pass"] != '' and ($md5 != $stored_hash)) {
+        echo "Incorrect password";
     }
 ?>
 </p>
