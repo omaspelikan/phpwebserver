@@ -13,7 +13,8 @@
         } elseif ($_POST["pass"] != '' and ($hash != $md5)) {
             echo "Incorrect password";
         } else {
-            echo "correct";
+            header("Location: game.php?name=".urlencode($_POST["name"]));
+            exit();
         }
     }
 ?>
