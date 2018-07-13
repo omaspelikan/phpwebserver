@@ -4,14 +4,14 @@
     <title>Reverse Hash to Pin</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    <body>
+    <body id="hash">
         
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="GET">
                 <input type="text" name="md5" size=40>
                 <input type="submit" name="Submit">
             </form>
             <?php
-                show_hash(20);
+                show_hash(15);
                 echo "<br>";
                 $time_start = microtime(True);
                if ($_SERVER["REQUEST_METHOD"] == "GET") {
