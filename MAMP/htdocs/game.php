@@ -2,9 +2,11 @@
     if (! isset($_GET['name'])) {
         die("Name parameter missing");
     }
+
     if (isset($_POST['exit'])) {
         header('Location: index.php');
     }
+    
     $human = isset($_POST["choice"]) ? $_POST["choice"] : '';
     $select = array('Rock','Paper','Scissors');
     $computer = $select[rand(0,2)];
@@ -23,8 +25,9 @@
         }
     }
     function show_result($human,$computer) {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            echo "Human=".$human." "."Computer=".$computer." "."Result=".check($computer,$human);
+        // only print result if $_POST[] is initialized and $_POST['choice'] have value other than NULL.
+        if (($_SERVER["REQUEST_METHOD"] == "POST") and (isset($_POST['choice']))) {
+            echo "Human=".$human." "."Computer=".$computer." "."Result=".check($computer,$human)."<br>";
             //"Human=$_POST['choice']"." "."Computer=$computer"." "."Result=".check($computer,$human);
         }
     }
@@ -52,11 +55,12 @@
 </form>
 <br>
 <p id='instro'>Please select a strategy and press Play.<br>
-<?php show_result($human,$computer);                                                                                                                                  
-    echo '<br>';
-    print_r($human);
-    echo '<br>';
-    print_r($computer);
+<?php 
+    show_result($human,$computer);                                                                                                                                  
+    //echo '<br>';
+    //print_r($human);
+    //echo '<br>';
+    //print_r($computer);
 ?>
 </p>
 </body>
