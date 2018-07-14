@@ -42,6 +42,7 @@
 </p>
 <form method="POST">
     <select name='choice'>
+        <option value='' selected disabled hidden>Select</option>
         <option value="Rock">Rock</option>
         <option value="Paper">Paper</option>
         <option value="Scissors">Scissors</option>     
