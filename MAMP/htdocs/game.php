@@ -45,13 +45,13 @@
         <option value="Rock">Rock</option>
         <option value="Paper">Paper</option>
         <option value="Scissors">Scissors</option>     
-    </select>
+    </select>                         
     <input type="submit" value="Play" name='submit' id='buttom'>
     <input type="submit" value="Logout" name='exit' id='buttom'>
 </form>
 <br>
 <p id='instro'>Please select a strategy and press Play.<br>
-<?php show_result($human,$computer);
+<?php show_result($human,$computer);                                                                                                                                  
     echo '<br>';
     print_r($human);
     echo '<br>';

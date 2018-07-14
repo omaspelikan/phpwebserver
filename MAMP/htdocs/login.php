@@ -1,9 +1,9 @@
 <?php
     //$oldname = isset($_POST["name"]) ? $_POST["name"] : '';
-    //$oldpass = isset($_POST["pass"]) ? $_POST["pass"] : '';
+    $oldpass = isset($_POST["pass"]) ? $_POST["pass"] : '';
     $salt = 'XyZzy12*_';                        // password = XyZzy12*_php123
     $stored_hash = hash('md5', $salt.'php123'); // hash value of password
-    $md5 = hash('md5', $_POST['pass']);               // hash value of user input password
+    $md5 = hash('md5', $oldpass);               // hash value of user input password
 
     function login($hash, $md5) {
         // check login name is not empty and check password is not empty and correct.
@@ -32,7 +32,9 @@
 <body>
 <p class="error">
 <?php
-    login($stored_hash, $md5);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        login($stored_hash, $md5);
+    }
 ?>
 </p>
 <form method="POST">
