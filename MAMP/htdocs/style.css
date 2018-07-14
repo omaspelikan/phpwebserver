@@ -3,9 +3,21 @@
     font-size: 14px;
 }
 #warning {
-    
+    color: blue;
 }
 
 .error {
     color:red;
+}
+#instro {
+    font-family: monospace;
+    border-style: groove;
+    background-color: ghostwhite;
+    padding:8px;
+}
+
+#buttom {
+    border-style: groove;
+    background-color:gainsboro;
+    padding:0.5em;
 }
