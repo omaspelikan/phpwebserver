@@ -12,7 +12,9 @@
 </form>
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo $_POST["firstname"]."<br>".$_POST["lastname"];
+        $firstname = htmlspecialchars($_POST["firstname"]);
+        $lastname = htmlspecialchars($_POST["lastname"]);
+        echo $firstname."<br>".$lastname;
         
     }
 ?>        
