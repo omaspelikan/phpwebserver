@@ -3,12 +3,12 @@
     //$oldpass = isset($_POST["pass"]) ? $_POST["pass"] : '';
     $salt = 'XyZzy12*_';                        // password = XyZzy12*_php123
     $stored_hash = hash('md5', $salt.'php123'); // hash value of password
-    $md5 = hash('md5', $_POST["pass"]);               // hash value of user input password
+    $md5 = hash('md5', $_POST['pass']);               // hash value of user input password
 
     function login($hash, $md5) {
         // check login name is not empty and check password is not empty and correct.
         // Redirect to game.php if login success.
-        if ($_POST["name"] == '' or ($_POST["pass"] == '')) {
+        if (($_POST["name"]== '') or ($_POST['pass'] == '')) {
             echo "User name and password are required";
         } elseif ($_POST["pass"] != '' and ($hash != $md5)) {
             echo "Incorrect password";

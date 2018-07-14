@@ -5,6 +5,29 @@
     if (isset($_POST['exit'])) {
         header('Location: index.php');
     }
+    $human = isset($_POST["choice"]) ? $_POST["choice"] : '';
+    $select = array('Rock','Paper','Scissors');
+    $computer = $select[rand(0,2)];
+
+    function check($computer, $human) {
+        if ($computer == $human) {
+            return "Tie";
+        } elseif (($computer == 'Paper') and ($human == 'Rock')) {
+            return "You Lose";
+        } elseif (($computer == 'Scissors') and ($human == 'Paper')) {
+            return "You Lose";
+        } elseif (($computer == 'Rock') and ($human == 'Scissors')) {
+            return "You Lose";
+        } else {
+            return "You Win";
+        }
+    }
+    function show_result($human,$computer) {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            echo "Human=".$human." "."Computer=".$computer." "."Result=".check($computer,$human);
+            //"Human=$_POST['choice']"." "."Computer=$computer"." "."Result=".check($computer,$human);
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +41,7 @@
 <?php echo "Welcome ".$_GET["name"]; ?>
 </p>
 <form method="POST">
-    <select name="choice">
+    <select name='choice'>
         <option value="Rock">Rock</option>
         <option value="Paper">Paper</option>
         <option value="Scissors">Scissors</option>     
@@ -27,6 +50,13 @@
     <input type="submit" value="Logout" name='exit' id='buttom'>
 </form>
 <br>
-<p id='instro'>Please select a strategy and press Play.</p>
+<p id='instro'>Please select a strategy and press Play.<br>
+<?php show_result($human,$computer);
+    echo '<br>';
+    print_r($human);
+    echo '<br>';
+    print_r($computer);
+?>
+</p>
 </body>
 </html>
