@@ -8,7 +8,7 @@
     function login($hash, $md5) {
         // check login name is not empty and check password is not empty and correct.
         // Redirect to game.php if login success.
-        if (($_POST["name"]== '') or ($_POST['pass'] == '')) {
+        if (($_POST["name"]=='') or ($_POST['pass']=='')) {
             echo "User name and password are required";
         } elseif ($_POST["pass"] != '' and ($hash != $md5)) {
             echo "Incorrect password";
