@@ -1,4 +1,7 @@
 # game_functions.py
+# pylint: disable=E1101
+# pylint: disable=W0614
+# pylint: disable=E0602
 """ Check quit event """
 import sys
 import pygame
