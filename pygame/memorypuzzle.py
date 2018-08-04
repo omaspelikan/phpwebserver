@@ -12,7 +12,7 @@ from pygame.locals import *
 FPS = 30
 WINDOWWIDTH = 640
 WINDOWHEIGHT = 480
-REVELSPEED = 8
+REVELSPEED = 20
 BOXSIZE = 40                        # size of box H & W in pixels
 GAPSIZE = 10                        # size of gap between boxesin pixels
 BOARDWIDTH = 10                     # number of columns of icons
@@ -90,6 +90,7 @@ def main():
             if not revealedBoxes[boxx][boxy] and mouseClicked:
                 revealBoxesAnimation(mainBoard, [(boxx, boxy)])
                 revealedBoxes[boxx][boxy] = True
+                
 
                 if firstSelection == None:
                     firstSelection = (boxx, boxy)
@@ -201,7 +202,7 @@ def drawBoxCovers(board, boxes, coverage):
     FPSCLOCK.tick(FPS)
 
 def revealBoxesAnimation(board, boxesToReveal):
-    for coverage in range(BOXSIZE, (-REVELSPEED) - 1, -(REVELSPEED)):
+    for coverage in range(BOXSIZE, (-REVELSPEED) - 1, -REVELSPEED):
         drawBoxCovers(board, boxesToReveal, coverage)
 
 def coverBoxesAnimation(board, boxesToCover):
