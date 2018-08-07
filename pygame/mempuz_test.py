@@ -55,7 +55,7 @@ def main():
     # initial a table
     for y in range(BOXPERCOLUMN):
         for x in range(BOXPERROW):
-            table.append((x,y))
+            table.append([(x,y),False])
     #print(table)
     # How to show list to screen?
     #
@@ -70,7 +70,7 @@ def main():
         board = []
         mouseClicked = False
         for block in table:
-            printBlock(block[0],block[1],board)
+            printBlock(block, board)
 
     #    DISPLAYSURF.blit(showWord, textRectObj)
         for event in pygame.event.get():
@@ -96,10 +96,12 @@ def main():
         FPSCLOCK.tick(FPS)
 
 
-def printBlock(boxx, boxy, board):
-    # print(boxx, boxy)
-    board.append(pygame.Rect(boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
-    pygame.draw.rect(DISPLAYSURF, WHITE, (boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
+def printBlock(block, board):
+    key , value = block
+    boxx , boxy = key
+    if value == False:
+        board.append(pygame.Rect(boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
+        pygame.draw.rect(DISPLAYSURF, WHITE, (boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
 
 def showHightlight(mousex, mousey, board):
     for i in board:
