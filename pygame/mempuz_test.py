@@ -55,7 +55,7 @@ def main():
     # initial a table
     for y in range(BOXPERCOLUMN):
         for x in range(BOXPERROW):
-            table.append([(x,y),False])
+            table.append([x,y,False])
     #print(table)
     # How to show list to screen?
     #
@@ -89,7 +89,7 @@ def main():
         if checkPixinBox(mousex, mousey, board) == True:
             showHightlight(mousex, mousey, board)
         if checkPixinBox(mousex, mousey, board) == True and mouseClicked:
-            showIcon(mousex, mousey, board)
+            showIcon(mousex, mousey, board, table)
 
 
         pygame.display.update()
@@ -97,11 +97,13 @@ def main():
 
 
 def printBlock(block, board):
-    key , value = block
-    boxx , boxy = key
+    boxx, boxy, value = block
     if value == False:
         board.append(pygame.Rect(boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
         pygame.draw.rect(DISPLAYSURF, WHITE, (boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
+    elif value == True:
+        board.append(pygame.Rect(boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
+        pygame.draw.rect(DISPLAYSURF, GREEN, (boxx * PIXELPERBOX + boxx * PIXELPERGAP + XMARGIN , boxy * PIXELPERBOX + boxy * PIXELPERGAP + YMARGIN, PIXELPERBOX, PIXELPERBOX))
 
 def showHightlight(mousex, mousey, board):
     for i in board:
@@ -111,10 +113,19 @@ def showHightlight(mousex, mousey, board):
     #FPSCLOCK.tick(FPS)
 
 
-def showIcon(mousex, mousey, board):
+def showIcon(mousex, mousey, board, table):
+    index = 0    
     for i in board:
+        boxx, boxy, value =table[index]
         if i.collidepoint(mousex, mousey) == True:
-            pygame.draw.rect(DISPLAYSURF, GREEN, i)
+           #pygame.draw.rect(DISPLAYSURF, GREEN, i)
+           table[index] = [boxx, boxy, True]
+           print(table[index])
+        index = index + 1
+
+
+        #    board.
+
 #       pygame.display.update()
         #FPSCLOCK.tick(FPS)
 def checkPixinBox(mousex, mousey, board):
