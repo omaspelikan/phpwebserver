@@ -9,10 +9,10 @@
 import random, pygame, sys
 from pygame.locals import *
 
-FPS = 30
+FPS = 20
 WINDOWWIDTH = 640
 WINDOWHEIGHT = 480
-REVELSPEED = 20
+REVELSPEED = 4
 BOXSIZE = 40                        # size of box H & W in pixels
 GAPSIZE = 10                        # size of gap between boxesin pixels
 BOARDWIDTH = 10                     # number of columns of icons
@@ -87,9 +87,10 @@ def main():
             # the mouse is currently over a box.
             if not revealedBoxes[boxx][boxy]:
                 drawHighlightBox(boxx, boxy)
-            if not revealedBoxes[boxx][boxy] and mouseClicked:
+            if not revealedBoxes[boxx][boxy] and mouseClicked :
                 revealBoxesAnimation(mainBoard, [(boxx, boxy)])
                 revealedBoxes[boxx][boxy] = True
+                print('revealed is :'+'boxx '+'boxy',revealedBoxes[boxx][boxy],boxx,boxy)
                 
 
                 if firstSelection == None:
@@ -102,6 +103,7 @@ def main():
                         coverBoxesAnimation(mainBoard, [(firstSelection[0], firstSelection[1]), (boxx, boxy)])
                         revealedBoxes[firstSelection[0]][firstSelection[1]] = False
                         revealedBoxes[boxx][boxy] = False
+                        print('not match')
                     elif hasWon(revealedBoxes):             # check if all pairs found
                         gameWonAnimation(mainBoard)
                         pygame.time.wait(2000)
@@ -224,6 +226,7 @@ def drawHighlightBox(boxx, boxy):
     pygame.draw.rect(DISPLAYSURF, HIHGLIGHTCOLOR, (left - 5, top - 5, BOXSIZE + 10, BOXSIZE + 10), 4)
 
 def startGameAnimaton(board):
+    # boxes is for reveal random icons group.
     coveredBoxes = generateRevealedBoxesData(False)
     boxes = []
     for x in range(BOARDWIDTH):
