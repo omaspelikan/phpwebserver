@@ -1,23 +1,25 @@
 # python catwalk
-number = input("How many time will you test? ")
-number=int(number)
+case = input("How many cases will you test? ")
+case=int(case)
 
-while number > 0:
-    member = 20
-    sum = 0
+while case > 0:
+    member = 100
+    count = 0
     while member > 0:
-        time = input("please enter 10 member time ")
-        indiv_len = len(time.split())
+        data = input("Please enter completed time of 10 people ")
+        indiv_len = len(data.split())
         if indiv_len != 10:
             print("Your input need to be count as 10 integer")
         else:
             member = member - indiv_len
-            for x in time.split():
-                if int(x) >= 5:
-                    sum = sum+1
-    if sum >=10:
-        print("it's not catwalk question.")
+#            time=''.join(data)
+            for x in data.split():
+                if int(x) >= 30:
+                    count = count + 1
+    if count <=60:
+        print("No")
     else:
-        print("it's catwalk question")
-    number = number - 1
+        print("Yes")
+    case = case - 1
+
 
