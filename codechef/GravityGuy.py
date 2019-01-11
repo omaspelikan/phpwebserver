@@ -24,6 +24,7 @@ while time > 0:
                 goal = True
             else:
                 goal = False
+                break
         elif pos == 1:
             if check(l1[index]):
                 pos = 1
@@ -32,6 +33,7 @@ while time > 0:
                 pos = 2
             else:
                 goal = False
+                break
         elif pos == 2:
             if check(l2[index]):
                 pos = 2
@@ -40,7 +42,7 @@ while time > 0:
                 pos = 1
             else:
                 goal = False
-
+                break
         index = index +1
     if goal == True:
         print("Yes")
