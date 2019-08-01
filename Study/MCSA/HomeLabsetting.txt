@@ -1,0 +1,5 @@
+Server:
+        OS:Windows Server 2019 Standard
+        CPU:Intel Xeron E3-1240v5
+        MEM:DDR4 16GB
+        GPU:Nvidia GTX750Ti
