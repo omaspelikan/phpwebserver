@@ -18,7 +18,7 @@ RED = (255,0,0)
 GREEN = (0,255,0)
 BLUE = (0,0,255)
 
-fontobj = pygame.font.Font('/Library/Fonts/Arial.ttf', 32)
+fontobj = pygame.font.Font('/Library/Fonts/Georgia.ttf', 40)
 fontsurobj = fontobj.render('Hello world', True , GREEN, BLUE)
 textRectObj = fontsurobj.get_rect()
 textRectObj.center = (200,150)

@@ -6,7 +6,8 @@ import pygame, sys
 from pygame.locals import *
 
 pygame.init()
-DISPLAYSURF = pygame.display.set_mode((400,300),pygame.RESIZABLE)
+DISPLAYSURF = pygame.display.set_mode((400,300),pygame.RESIZABLE, 32)
+DISPLAYSURF.fill((255,255,255))
 pygame.display.set_caption('Hello, World!')
 while True:
     for event in pygame.event.get():

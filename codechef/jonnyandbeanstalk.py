@@ -10,7 +10,7 @@ while test_time > 0 and test_time <=20:
 #    y = 0
     if level_beanstalk > 0 and level_beanstalk <= 10**6:
         for x in leaf:
-            if sum == 1 and int(x) ==0 :
+            if sum == 1 and int(x) == 0:
                 rule == True
             elif sum == 2 and int(x) == 1:
                 rule = True    

@@ -11,6 +11,7 @@
     <input type="submit" value="submit">
 </form>
 <?php
+// check $_POST have been initialized , if true then print first and last name.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $firstname = htmlspecialchars($_POST["firstname"]);
         $lastname = htmlspecialchars($_POST["lastname"]);
