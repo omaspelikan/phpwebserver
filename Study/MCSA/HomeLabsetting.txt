@@ -1,5 +1,13 @@
 Server:
+        Hostname:ws2019s
         OS:Windows Server 2019 Standard
         CPU:Intel Xeron E3-1240v5
         MEM:DDR4 16GB
         GPU:Nvidia GTX750Ti
+        IP:192.168.88.128/24
+        Rule:Hyper-V Server
+        Domain:7bsdmhtk.duckdns.org
+
+
+Virtual Machine:
+        1.
